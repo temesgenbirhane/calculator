@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .calculator{
+        width:50%;height:30%;
+        margin: auto;
+        box-shadow: 0 0 10px lightgrey;
+    }
+    input[type="text"]{
+        width:50%;margin:40px 150px;
+        border-style:none;font-size:30px;
+        border-bottom:2px solid #333;
+        text-align: right; 
+    }
+    .content{
+        margin-left:200px;
+    }
+    input[type="submit"]{
+        padding:20px;
+        margin:5px;
+        font-size: 20px;
+    }
+    .equal{
+        background:#4caf50;
+        position:relative;top:35px;
+        transform: scaleY(2.2);
+        border-style:none;
+    }
+    </style>
+    <script>
+        var numberOne=0;
+        var numberTwo=0;
+        var operatorPressed=0;
+        var operator="";
+        var result=0;
+        function sendoperator(val){
+            operatorPressed=1;
+            operator=val;
+            document.getElementById("demo").value=val;
+        }
+        function sum(n1,n2){
+            n1=Number(n1);
+            n2=Number(n2);
+            return n1+n2; 
+        }
+        function minus(n1,n2){
+            return n1-n2;
+        }
+        function times(n1,n2){
+            return n1*n2;
+        }
+        function divide(n1,n2){
+            return n1/n2;
+        }
+        function modules(n1,n2){
+            return n1%n2;
+        }
+        function equal(val){
+                switch(operator){
+                    case '+':{
+                        result=sum(numberOne,numberTwo);
+                        document.getElementById("demo").value=result;
+                        operatorPressed=0;
+                        operator=0;
+                        numberOne=result;
+                        numberTwo=0;
+                        dot=0;
+                        break;
+                    }
+                    case '-':{
+                        result=minus(numberOne,numberTwo);
+                        document.getElementById("demo").value=result;
+                        operatorPressed=0;
+                        operator=0;
+                        numberOne=result;
+                        numberTwo=0;
+                        dot=0;
+                        break;
+                    }
+                    case '*':{
+                        result=times(numberOne,numberTwo);
+                        document.getElementById("demo").value=result;
+                        operatorPressed=0;
+                        operator=0;
+                        numberOne=result;
+                        numberTwo=0;
+                        dot=0;
+                        break;
+                    }
+                    case '/':{
+                        result=divide(numberOne,numberTwo);
+                        document.getElementById("demo").value=result;
+                        operatorPressed=0;
+                        operator=0;
+                        numberOne=result;
+                        numberTwo=0;
+                        dot=0;
+                        break;
+                    }
+                    case '%':{
+                        result=modules(numberOne,numberTwo);
+                        document.getElementById("demo").value=result;
+                        operatorPressed=0;
+                        operator=0;
+                        numberOne=result;
+                        numberTwo=0;
+                        dot=0;
+                        break;
+                    }
+                }
+        }
+            function zero(val){
+                if(operatorPressed==1){
+                    if(numberTwo==0 && dot==0)
+                    numberTwo=val;
+                    else if(numberTwo==0 && dot==1 || numberTwo!=0)
+                    numberTwo+=val;
+                    document.getElementById("demo").value=numberTwo;
+                }
+                else{
+                    if(numberOne==0 && dot==0)
+                    numberOne=val;
+                    else if(numberOne==0 && dot==1 || numberOne!=0)
+                    numberOne+=val;
+                    document.getElementById("demo").value=numberOne;
+                }
+            }
+            function one(val){
+                if(operatorPressed==1){
+                    if(numberTwo==0 && dot==0)
+                    numberTwo=val;
+                    else if(numberTwo==0 && dot==1 || numberTwo!=0)
+                    numberTwo+=val;
+                    document.getElementById("demo").value=numberTwo;
+                }
+                else{
+                    if(numberOne==0 && dot==0)
+                    numberOne=val;
+                    else if(numberOne==0 && dot==1 || numberOne!=0)
+                    numberOne+=val;
+                    document.getElementById("demo").value=numberOne;
+                }
+            }
+            function two(val){
+                if(operatorPressed==1){
+                    if(numberTwo==0 && dot==0)
+                    numberTwo=val;
+                    else if(numberTwo==0 && dot==1 || numberTwo!=0)
+                    numberTwo+=val;
+                    document.getElementById("demo").value=numberTwo;
+                }
+                else{
+                    if(numberOne==0 && dot==0)
+                    numberOne=val;
+                    else if(numberOne==0 && dot==1 || numberOne!=0)
+                    numberOne+=val;
+                    document.getElementById("demo").value=numberOne;
+                }
+            }
+            function three(val){
+                if(operatorPressed==1){
+                    if(numberTwo==0 && dot==0)
+                    numberTwo=val;
+                    else if(numberTwo==0 && dot==1 || numberTwo!=0)
+                    numberTwo+=val;
+                    document.getElementById("demo").value=numberTwo;
+                }
+                else{
+                    if(numberOne==0 && dot==0)
+                    numberOne=val;
+                    else if(numberOne==0 && dot==1 || numberOne!=0)
+                    numberOne+=val;
+                    document.getElementById("demo").value=numberOne;
+                }
+            }
+            function four(val){
+                if(operatorPressed==1){
+                    if(numberTwo==0 && dot==0)
+                    numberTwo=val;
+                    else if(numberTwo==0 && dot==1 || numberTwo!=0)
+                    numberTwo+=val;
+                    document.getElementById("demo").value=numberTwo;
+                }
+                else{
+                    if(numberOne==0 && dot==0)
+                    numberOne=val;
+                    else if(numberOne==0 && dot==1 || numberOne!=0)
+                    numberOne+=val;
+                    document.getElementById("demo").value=numberOne;
+                }
+            }
+            function five(val){
+                if(operatorPressed==1){
+                    if(numberTwo==0 && dot==0)
+                    numberTwo=val;
+                    else if(numberTwo==0 && dot==1 || numberTwo!=0)
+                    numberTwo+=val;
+                    document.getElementById("demo").value=numberTwo;
+                }
+                else{
+                    if(numberOne==0 && dot==0)
+                    numberOne=val;
+                    else if(numberOne==0 && dot==1 || numberOne!=0)
+                    numberOne+=val;
+                    document.getElementById("demo").value=numberOne;
+                }
+            }
+            function six(val){
+                if(operatorPressed==1){
+                    if(numberTwo==0 && dot==0)
+                    numberTwo=val;
+                    else if(numberTwo==0 && dot==1 || numberTwo!=0)
+                    numberTwo+=val;
+                    document.getElementById("demo").value=numberTwo;
+                }
+                else{
+                    if(numberOne==0 && dot==0)
+                    numberOne=val;
+                    else if(numberOne==0 && dot==1 || numberOne!=0)
+                    numberOne+=val;
+                    document.getElementById("demo").value=numberOne;
+                }
+            }
+            function seven(val){
+                if(operatorPressed==1){
+                    if(numberTwo==0 && dot==0)
+                    numberTwo=val;
+                    else if(numberTwo==0 && dot==1 || numberTwo!=0)
+                    numberTwo+=val;
+                    document.getElementById("demo").value=numberTwo;
+                }
+                else{
+                    if(numberOne==0 && dot==0)
+                    numberOne=val;
+                    else if(numberOne==0 && dot==1 || numberOne!=0)
+                    numberOne+=val;
+                    document.getElementById("demo").value=numberOne;
+                }
+            }
+            function eight(val){
+                if(operatorPressed==1){
+                    if(numberTwo==0 && dot==0)
+                    numberTwo=val;
+                    else if(numberTwo==0 && dot==1 || numberTwo!=0)
+                    numberTwo+=val;
+                    document.getElementById("demo").value=numberTwo;
+                }
+                else{
+                    if(numberOne==0 && dot==0)
+                    numberOne=val;
+                    else if(numberOne==0 && dot==1 || numberOne!=0)
+                    numberOne+=val;
+                    document.getElementById("demo").value=numberOne;
+                }
+            }
+            function nine(val){
+                if(operatorPressed==1){
+                    if(numberTwo==0 && dot==0)
+                    numberTwo=val;
+                    else if(numberTwo==0 && dot==1 || numberTwo!=0)
+                    numberTwo+=val;
+                    document.getElementById("demo").value=numberTwo;
+                }
+                else{
+                    if(numberOne==0 && dot==0)
+                    numberOne=val;
+                    else if(numberOne==0 && dot==1 || numberOne!=0)
+                    numberOne+=val;
+                    document.getElementById("demo").value=numberOne;
+                }
+            }
+            function clearall(){
+                numberOne=0;
+                numberTwo=0;
+                operator=0;
+                operatorPressed=0;
+                dot=0;
+                document.getElementById("demo").value=0;
+            }
+            var dot = 0;
+    function dot(val) {
+        // dot = 1; i dont think this is necessary
+        if (operatorPressed == 1) {
+            numberTwo += val;
+            document.getElementById("demo").value = numberTwo;
+
+        }
+        else {
+            numberOne += val;
+            document.getElementById("demo").value = numberOne;
+
+        }
+    }
+            function reduceone(){
+                if(operatorPressed==1){
+                    var len=numberTwo.length;
+                    var ans=numberTwo.slice(0,len-1);
+                    document.getElementById("demo").value=ans;
+                }
+                else{
+                    var len=numberOne.length;
+                    var ans=numberOne.slice(0,len-1);
+                    numberOne=ans;
+                    document.getElementById("demo").value=numberOne;
+                }
+            }
+    
+    </script>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="demo">
+        <div class="content">
+         <div class="row1">
+            <input type="submit" value="C" onclick="clearall()">
+            <input type="submit" value="/" onclick="sendoperator(value)">
+            <input type="submit" value="*" onclick="sendoperator(value)">
+            <input type="submit" value="X" onclick="reduceone()">
+        </div>
+        <div class="row2">
+            <input type="submit" value="7" onclick="seven(value)">
+            <input type="submit" value="8" onclick="eight(value)">
+            <input type="submit" value="9" onclick="nine(value)">
+            <input type="submit" value="-" onclick="sendoperator(value)">
+        </div>
+        <div class="row3">
+            <input type="submit" value="4" onclick="four(value)">
+            <input type="submit" value="5" onclick="five(value)">
+            <input type="submit" value="6" onclick="six(value)">
+            <input type="submit" value="+" onclick="sendoperator(value)">
+        </div>
+        <div class="row5">
+            <input type="submit" value="1" onclick="one(value)">
+            <input type="submit" value="2" onclick="two(value)">
+            <input type="submit" value="3" onclick="three(value)">
+            <input type="submit" value="=" onclick="equal(value)" class="equal">
+        </div>
+        <div class="row6">
+            <input type="submit" value="." onclick="dot(value)">
+            <input type="submit" value="0" onclick="zero(value)">
+            <input type="submit" value="%" onclick="sendoperator(value)">
+        </div>
+        </div>
+    </div>
+</body>
+</html>
